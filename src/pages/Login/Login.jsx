@@ -1,5 +1,5 @@
 import { useForm } from "react-hook-form";
-import appService from "../../AppServices/AppService";
+import appService from "../../AppService/AppService";
 import { UseLoginStore } from "./UseLoginStore";
 
 export const Login = () => {
