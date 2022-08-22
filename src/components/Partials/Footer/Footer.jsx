@@ -1,7 +1,10 @@
+import './Footer.scss'
+
 export const Footer = () => {
+    
     return (
-        <footer>
-            <h2>footer</h2>
+        <footer>        
+            <img src={require('../../../Assets/Images/footer.png')} alt='footer-img' />
         </footer>
     )
 }
