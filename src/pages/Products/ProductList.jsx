@@ -60,20 +60,3 @@ export const ProductList = () => {
         </>
     )
 }
-
-/* // return(
-            //     <figure key={item.id}>
-            //         <img src={item.subgroups[0].products[0].image_fullpath} alt={item.name} />
-            //     <figcaption>
-            //         <article>
-            //             <h3>{item.subgroups[0].products[0].name}</h3>
-            //             <p>{item.subgroups[0].products[0].description_long}</p>
-            //             <p className="greenTxt">READ MORE</p>
-            //         </article>
-            //         <article>
-            //             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio aspernatur deleniti necessitatibus, esse quibusdam mollitia quos laudantium, ea reiciendis pariatur aut ut nam repellat animi neque consectetur ducimus? Ipsam, illo!</p>
-            //             <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iure neque laudantium, qui harum error quo deserunt dolore alias incidunt ipsa commodi sint dolorem ullam porro doloremque voluptate, cupiditate nemo est.</p>
-            //         </article>
-            //     </figcaption>
-            // </figure>
-            // ) */
