@@ -16,8 +16,10 @@ export const AppRouter = () => {
             <Route path='/shopping' element={<Shopping />} />
             <Route path='/sales' element={<Sales />} />
             <Route path='productlist' element={<ProductList />}>
-                <Route path=':id' element={<ProductDetails />}>
-                    <Route path=':subid' element={<ProductDetails />}> </Route>    
+                <Route path=':id' element={<ProductList />}>
+                    <Route path=':subid' element={<ProductList />}> 
+                        <Route path=':id' element={<ProductDetails />}></Route> 
+                    </Route>  
                 </Route>
             </Route>
             <Route path='leftnav' element={<LeftNav />} ></Route>

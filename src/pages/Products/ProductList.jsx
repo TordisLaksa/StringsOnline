@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
-import { Outlet, useParams } from "react-router-dom";
+import { Link, Outlet, useParams } from "react-router-dom";
 import appService from "../../AppService/AppService";
+import { ProductDetails } from "./ProductDetails";
 import './ProductList.scss'
 
 export const ProductList = () => {
@@ -25,14 +26,17 @@ export const ProductList = () => {
     return(
         <>
         {products && products.map((item) => {
+            // console.log(item);
          return(
              <React.Fragment key={item.id}>
             {item.subgroups && item.subgroups.map((group) => {
-                if (group.parent_id == id) {
-                    if (group.id == subid || !subid) {
+               
+                if (group.parent_id === id) {
+                    if (group.id === subid || !subid) {
                     return(
                     <figure key={group.id}>
                         {group.products && group.products.map((products) => {
+                            // console.log(products);
                             return(
                                 <React.Fragment key={products.id}>
                                     <img src={products.image_fullpath} alt={products.name} />
@@ -40,7 +44,7 @@ export const ProductList = () => {
                                         <article>
                                             <h3>{products.name}</h3>
                                             <p>{products.description_long}</p>
-                                            <button>Read more</button>
+                                            <button><Link to={`${id}/${subid}/${products.id}`}>Read more</Link></button>
                                         </article>
                                         <article>
                                             <p>Pris: DKK {products.price}</p>
@@ -53,7 +57,7 @@ export const ProductList = () => {
                         })}
                     </figure>
                     )
-                    }
+                    } 
                 }
             })}
         </React.Fragment>
@@ -61,6 +65,7 @@ export const ProductList = () => {
        
         })}
         <Outlet />
+        
         </>
     )
 }
