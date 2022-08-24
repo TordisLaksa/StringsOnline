@@ -2,11 +2,12 @@
 footer{
     position: sticky;
     left: 0;
+    right: 0;
     bottom: 0;
-    margin-left: -5vw;
     overflow-x: hidden;
     background-color: #393939;
-    width: 99.16vw;
+    width: 100.7vw;
+    margin-left: -2vw;
     display: flex;
     justify-content: center;
 }

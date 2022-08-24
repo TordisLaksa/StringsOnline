@@ -3,11 +3,11 @@ article{
     width: 100%;
     display: grid;
     grid-template-rows: repeat(2, 1fr);
-    gap: .5vw;
+    gap: .3vw;
     .contactWrapper{
         display: grid;
-        grid-template-columns: 2fr 1fr .2fr;
-        gap: 1vw;
+        grid-template-columns: 1.8fr 1fr .2fr;
+        gap: .5vw;
         p{
             font-size: .9vw;
             color: #fff;

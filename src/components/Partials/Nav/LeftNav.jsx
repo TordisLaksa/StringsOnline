@@ -6,13 +6,13 @@ import './LeftNav.scss'
 
 const handleClick = event => {
     event.currentTarget.classList.toggle('active');
+    
     let panel = event.currentTarget.nextElementSibling;
     if (panel.style.display === "block") {
         panel.style.display = "none";
     } else {
         panel.style.display = "block";
     }
-    
 }
 
 export const LeftNav = () => {
@@ -40,14 +40,19 @@ export const LeftNav = () => {
         <nav id="LeftNav">
             <ul>
             {productGroups && productGroups.map((item, i) => {
-                // console.log(item.subgroups[i]);
                 return(
                     <React.Fragment key={item.id}>
                         <ProductGroupID id={item.subgroups[i].parent_id}/>
-                        <li className="accordion" onClick={handleClick}><Link to={`productlist/${item.subgroups[i].parent_id}`}>{item.title}</Link></li>
-                        <li className="panel">
-                            <Link to={'/'}>{item.subgroups[i].title}</Link>
-                        </li>
+                        <li className="accordion" onClick={handleClick}><Link to={`/productlist`}>{item.title}</Link></li>
+                        <ol className="panel">
+                        {item && item.subgroups.map((item) => {
+                            return(
+                                <React.Fragment key={item.id}>
+                                <li><Link to={`productlist/${item.title}`}>{item.title}</Link></li>
+                                </React.Fragment>
+                            )
+                        })}
+                        </ol>
                     </React.Fragment>
                 )
             })}
