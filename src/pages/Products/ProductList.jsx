@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from "react";
-import { Outlet } from "react-router-dom";
+import { Outlet, useParams } from "react-router-dom";
 import appService from "../../AppService/AppService";
 import './ProductList.scss'
 
 export const ProductList = () => {
     const [ products, setProducts ] = useState();
-    
+    const { id, subid } = useParams();
+     
     useEffect(() => {
     
         const getProducts = async () => {
@@ -27,8 +28,9 @@ export const ProductList = () => {
          return(
              <React.Fragment key={item.id}>
             {item.subgroups && item.subgroups.map((group) => {
-                // console.log(group);
-                return(
+                if (group.parent_id == id) {
+                    if (group.id == subid || !subid) {
+                    return(
                     <figure key={group.id}>
                         {group.products && group.products.map((products) => {
                             return(
@@ -50,12 +52,14 @@ export const ProductList = () => {
                             )
                         })}
                     </figure>
-                )
+                    )
+                    }
+                }
             })}
-             </React.Fragment>
+        </React.Fragment>
         ) 
        
-    })}
+        })}
         <Outlet />
         </>
     )

@@ -43,12 +43,12 @@ export const LeftNav = () => {
                 return(
                     <React.Fragment key={item.id}>
                         <ProductGroupID id={item.subgroups[i].parent_id}/>
-                        <li className="accordion" onClick={handleClick}><Link to={`/productlist`}>{item.title}</Link></li>
+                        <li className="accordion" onClick={handleClick}><Link to={`/productlist/${item.subgroups[i].parent_id}`} state={{ id: item.subgroups[i].parent_id }}>{item.title}</Link></li>
                         <ol className="panel">
                         {item && item.subgroups.map((item) => {
                             return(
                                 <React.Fragment key={item.id}>
-                                <li><Link to={`productlist/${item.title}`}>{item.title}</Link></li>
+                                <li><Link to={`productlist/${item.parent_id}/${item.id}`}>{item.title}</Link></li>
                                 </React.Fragment>
                             )
                         })}
@@ -71,7 +71,6 @@ export const ProductGroupID = ({ id }) => {
 
             try {
                 const response = await appService.getDetails('productgroups', id);
-                // console.log(response);
                 if (response.data) {
                     setProductSubGroups(response.data.items);
                 }
