@@ -3,26 +3,30 @@ section{
     display: grid;
     grid-template-rows: repeat(4, auto);
     gap: 1vw;
-    // figure{
-    //     display: grid;
-    //     grid-template-columns: 1fr 3fr;
-    //     gap: 1vw;
-    //     img{
-    //         margin: auto;
-    //         width: 130%;
-    //         transform: rotate(270deg);}
-    //     figcaption{
-    //         display: grid;
-    //         grid-template-columns: repeat(2, 1fr);
-    //         gap: 1vw;
-    //         article{
-    //             display: grid;
-    //             grid-template-rows: auto;
-    //             gap: 0;
-    //         }
-    //     }
+    figure{
+        display: grid;
+        grid-template-columns: 1fr 3fr;
+        gap: 1vw;
+        img{
+            margin: auto;
+            width: 130%;
+            transform: rotate(270deg);
+            &#I531147{
+                transform: rotate(90deg);
+            }
+        }
+        figcaption{
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1vw;
+            article{
+                display: grid;
+                grid-template-rows: auto;
+                gap: 0;
+            }
+        }
         
-    // }
+    }
 }
 
 

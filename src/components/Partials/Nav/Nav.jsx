@@ -4,6 +4,7 @@ import './Nav.scss'
 export const Nav = () => {
     return (
         <nav>
+            {/* sætter logo til at linke til index */}
             <NavLink to={'/'}><img src={require ('../../../Assets/Images/header-bg.png')} alt="Logo"></img></NavLink>
             <ul>
                 <li><NavLink to={'/'}>Forside</NavLink></li>

@@ -1,4 +1,5 @@
 export const Sales = () => {
+    //kunden har ikke givet noget design/indhold = hardcode
     return(
         <article>
             <header><h2>Salgs- og handelsbetingelser</h2></header>
